@@ -15,40 +15,31 @@ class ViewController: UIViewController {
     @IBOutlet weak var buttonIDK: UIButton!
     
     
-    
-    
-    var question: [Question] = [
-       Question(numQuestion: 1, question: "Is your teacher a female?"),
+    database = [
         
-       
-       
-       
-       
-       
-        Question(numQuestion: 2, question: "Do they teach Math?"),
-
-        Question(numQuestion: 3, question: "Do they teach Science?"),
-
-        Question(numQuestion: 4, question: "Do they teach History?"),
+        
+        
 //
-        Question(numQuestion: 5, question: "Are they on the third floor?")
 //
-//        Question(question: "Are they on the second floor?"),
+//    var question: [Question] = [
+//       Question(numQuestion: 1, question: "Is your teacher a female?"),
 //
-//        Question(question: "Are they on the first floor?"),
+//        Question(numQuestion: 2, question: "Do they teach Math?"),
 //
-//        Question(question: "Do they teach an Art class?"),
+//        Question(numQuestion: 3, question: "Do they teach Science?"),
 //
-//        Question(question: "Do they teach a language?"),
-    ]
-
-    //1 = yes 2 = no 3 = idk
-    
-    
-    var teacher: [Teacher] = [
-        Teacher(teacherN: "Mr. Walter", answer: [1: 2, 2: 1, 3: 2, 4: 2, 5: 1]),
-        Teacher(teacherN: "Mr Laskaris", answer: [1: 1, 2: 1, 3: 2, 4: 2, 5: 1] )
-  
+//        Question(numQuestion: 4, question: "Do they teach History?"),
+////
+//        Question(numQuestion: 5, question: "Are they on the third floor?")
+//
+//    ]
+//
+//    //1 = yes 2 = no 3 = idk
+//
+//    var teacher: [Teacher] = [
+//        Teacher(teacherN: "Mr. Walter", answer: [1: 2, 2: 1, 3: 2, 4: 2, 5: 1]),
+//        Teacher(teacherN: "Mr Laskaris", answer: [1: 1, 2: 1, 3: 2, 4: 2, 5: 1] )
+//
 
       
     
