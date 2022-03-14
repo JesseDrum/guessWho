@@ -37,15 +37,20 @@ class ViewController: UIViewController {
 
     var teacher: [Teacher] = [
         Teacher(teacherN: "Mr. Walter", answer: [1: false, 2: true, 3: false, 4: false, 5: true]),
-        Teacher(teacherN: "Mr Laskaris", answer: [1: true, 2: true, 3: false, 4: false, 5: true] )
-
+        Teacher(teacherN: "Mr Laskaris", answer: [1: true, 2: true, 3: false, 4: false, 5: true]),
+        Teacher(teacherN: "Mr Laskaris", answer: [1: true, 2: true, 3: false, 4: false, 5: true])
     ]
     
     
     
-    func checkAns(answer: String, question: Int)
+    func checkAns(answer: Bool, question: Int)
     {
-        
+        if answer == true{
+            
+        }
+        else if answer == false{
+            
+        }
         
     }
     
@@ -56,12 +61,11 @@ override func viewDidLoad() {
     }
 
     
+    var count = 0
     @IBAction func yesButton(_ sender: UIButton) {
         
-        
-        
-        
-        
+        count += 1
+        checkAns(answer: true, question: count)
         
         
     }
