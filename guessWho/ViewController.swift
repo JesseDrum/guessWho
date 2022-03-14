@@ -100,13 +100,15 @@ override func viewDidLoad() {
     
     @IBAction func idkButton(_ sender: UIButton) {
         
-        
+//        buttonIDK = 3
+    
     
     
 
 }
 
 
+}
 
 struct Question {
     let numQuestion: Int
