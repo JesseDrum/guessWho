@@ -15,44 +15,38 @@ class ViewController: UIViewController {
     @IBOutlet weak var buttonIDK: UIButton!
     
     
-    database = [
         
         
         
-//
-//
-//    var question: [Question] = [
-//       Question(numQuestion: 1, question: "Is your teacher a female?"),
-//
-//        Question(numQuestion: 2, question: "Do they teach Math?"),
-//
-//        Question(numQuestion: 3, question: "Do they teach Science?"),
-//
-//        Question(numQuestion: 4, question: "Do they teach History?"),
-////
-//        Question(numQuestion: 5, question: "Are they on the third floor?")
-//
-//    ]
-//
-//    //1 = yes 2 = no 3 = idk
-//
-//    var teacher: [Teacher] = [
-//        Teacher(teacherN: "Mr. Walter", answer: [1: 2, 2: 1, 3: 2, 4: 2, 5: 1]),
-//        Teacher(teacherN: "Mr Laskaris", answer: [1: 1, 2: 1, 3: 2, 4: 2, 5: 1] )
-//
 
-      
-    
-    
-    
-    
+
+    var question: [Question] = [
+       Question(numQuestion: 1, question: "Is your teacher a female?"),
+
+        Question(numQuestion: 2, question: "Do they teach Math?"),
+
+        Question(numQuestion: 3, question: "Do they teach Science?"),
+
+        Question(numQuestion: 4, question: "Do they teach History?"),
+//
+        Question(numQuestion: 5, question: "Are they on the third floor?")
+
+    ]
+
+    //1 = yes 2 = no 3 = idk
+
+    var teacher: [Teacher] = [
+        Teacher(teacherN: "Mr. Walter", answer: [1: false, 2: true, 3: false, 4: false, 5: true]),
+        Teacher(teacherN: "Mr Laskaris", answer: [1: true, 2: true, 3: false, 4: false, 5: true] )
+
     ]
     
     
     
-    
-    
-    
+    func checkAns()
+    {
+        
+    }
     
     
 override func viewDidLoad() {
@@ -111,7 +105,7 @@ struct Question {
 struct Teacher {
     let teacherN: String
     
-    let answer: [Int: Double]
+    let answer: [Int: Bool]
     
     
     
