@@ -43,8 +43,9 @@ class ViewController: UIViewController {
     
     
     
-    func checkAns()
+    func checkAns(answer: String, question: Int)
     {
+        
         
     }
     
