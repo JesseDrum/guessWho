@@ -75,7 +75,7 @@ override func viewDidLoad() {
     
     @IBAction func noButton(_ sender: UIButton) {
         
-        buttonNO = 2
+//        buttonNO = 2
         
     }
     
@@ -86,7 +86,7 @@ override func viewDidLoad() {
     
     @IBAction func idkButton(_ sender: UIButton) {
         
-        buttonIDK = 3
+//        buttonIDK = 3
     
     
     
@@ -94,6 +94,7 @@ override func viewDidLoad() {
 }
 
 
+}
 
 struct Question {
     let numQuestion: Int
