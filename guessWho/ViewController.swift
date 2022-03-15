@@ -45,19 +45,8 @@ class ViewController: UIViewController {
 
     
     
-                    
-    
-    
-    
-                    
-    
-    
-        
-    
-
-    
-    
-    var questionone: [Question] = [
+      
+    var questions: [Question] = [
        Question(numQuestion: 1, question: "Is your teacher a female?"),
 
         Question(numQuestion: 2, question: "Do they teach Math?"),
@@ -81,41 +70,29 @@ class ViewController: UIViewController {
     
     
     
-    func checkAns(answer: Bool, question: Int)
-    {
-        var to_remove = [Any].self
-        var ans: Bool
-        
-        if answer == true{
-                    }
-        else if answer == false{
-            ans = false
-        }
-        
-        for a in teacher
-        {
-//            if ans != teacher
-//            {
-//                to_remove.append(a)
-//            }
-        
-            
-        }
-        
-        
-    }
+   
     
     
 override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+    loadQuestion()
     }
 
     
-    var count = 0
+    
+    func loadQuestion(){
+        myLabel.text = questions[count].question
+    }
+    
     @IBAction func yesButton(_ sender: UIButton) {
         
         count += 1
+        if count >= questions.count {
+            count = 0
+            // display alert that we ran out questuons
+        }
+        loadQuestion()
         checkAns(answer: true, question: count)
         
         
@@ -142,7 +119,31 @@ override func viewDidLoad() {
     
     
 
-}
+    }
+    
+    func checkAns(answer: Bool, question: Int)
+    {
+        var to_remove = [Any].self
+        var ans: Bool
+        
+        if answer == true{
+                    }
+        else if answer == false{
+            ans = false
+        }
+        
+        for a in teacher
+        {
+//            if ans != teacher
+//            {
+//                to_remove.append(a)
+//            }
+        
+            
+        }
+        
+        
+    }
 
 
 }
