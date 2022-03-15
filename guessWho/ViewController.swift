@@ -26,8 +26,7 @@ class ViewController: UIViewController {
     
     
     
-    var ans =
-    
+  func
     
     
     
@@ -45,28 +44,28 @@ class ViewController: UIViewController {
 
     
     
-      
-    var questions: [Question] = [
-       Question(numQuestion: 1, question: "Is your teacher a female?"),
-
-        Question(numQuestion: 2, question: "Do they teach Math?"),
-
-        Question(numQuestion: 3, question: "Do they teach Science?"),
-
-        Question(numQuestion: 4, question: "Do they teach History?"),
-        Question(numQuestion: 5, question: "Do they teach Compiter Science?"),
 //
-        Question(numQuestion: 6, question: "Are they on the third floor?")
-
-    ]
+//    var questions: [Question] = [
+//       Question(numQuestion: 1, question: "Is your teacher a female?"),
+//
+//        Question(numQuestion: 2, question: "Do they teach Math?"),
+//
+//        Question(numQuestion: 3, question: "Do they teach Science?"),
+//
+//        Question(numQuestion: 4, question: "Do they teach History?"),
+//        Question(numQuestion: 5, question: "Do they teach Compiter Science?"),
+////
+//        Question(numQuestion: 6, question: "Are they on the third floor?")
+//
+//    ]
 
     //1 = yes 2 = no 3 = idk
 
-    var teacherOne: [Teacher] = [
-        Teacher(teacherN: "Mr. Walter", answer: [1: false, 2: true, 3: false, 4: false, 5: true, 6: true]),
-        Teacher(teacherN: "Mr Laskaris", answer: [1: true, 2: true, 3: false, 4: false, 5: false, 6: true]),
-        Teacher(teacherN: "Mr Jackson", answer: [1: false, 2: true, 3: false, 4: false, 5: false, 6: true])
-    ]
+//    var teacherOne: [Teacher] = [
+//        Teacher(teacherN: "Mr. Walter", answer: [1: false, 2: true, 3: false, 4: false, 5: true, 6: true]),
+//        Teacher(teacherN: "Mr Laskaris", answer: [1: true, 2: true, 3: false, 4: false, 5: false, 6: true]),
+//        Teacher(teacherN: "Mr Jackson", answer: [1: false, 2: true, 3: false, 4: false, 5: false, 6: true])
+//    ]
     
     
     
@@ -121,9 +120,9 @@ override func viewDidLoad() {
 
     }
     
-    func checkAns(answer: Bool, question: Int)
+    func checkAns(answer: Bool, question: String)
     {
-        var to_remove = [Any].self
+        var toRemove = []
         var ans: Bool
         
         if answer == true{
@@ -132,15 +131,37 @@ override func viewDidLoad() {
             ans = false
         }
         
-        for a in teacher
+        for t in teacher
         {
-//            if ans != teacher
-//            {
-//                to_remove.append(a)
-//            }
+            if t[question] != ans
+            {
+                toRemove.append(t)
+            }
         
             
+            for i in toRemove{
+                teacher.remove(at: i)
+            }
+        
+            if teacher.count == 1
+            {
+                print(" your teacher is"+teacher[0]["name"])
+                
+            }
+        
+        
         }
+       
+//
+//        for i in to_remove:
+//              database.remove(i)
+//
+//          if len(database) == 1:
+//              print("your character is "+database[0]["name"])
+//              quit()
+        
+        
+        
         
         
     }
@@ -148,24 +169,24 @@ override func viewDidLoad() {
 
 }
 
-struct Question {
-    let numQuestion: Int
-    let question: String
-    
-    
-    
-    
-    
-//    let text: String
-//    let answers: [Answer]
-}
-
-struct Teacher {
-    let teacherN: String
-    
-    let answer: [Int: Bool]
-    
-    
-    
-    
-}
+//struct Question {
+//    let numQuestion: Int
+//    let question: String
+//
+//
+//
+//
+//
+////    let text: String
+////    let answers: [Answer]
+//}
+//
+//struct Teacher {
+//    let teacherN: String
+//
+//    let answer: [Int: Bool]
+//
+//
+//
+//
+//}
