@@ -5,6 +5,8 @@ class ViewController: UIViewController {
     
     
     
+    
+    
     @IBOutlet weak var myLabel: UILabel!
     
     @IBOutlet weak var buttonYes: UIButton!
@@ -15,12 +17,38 @@ class ViewController: UIViewController {
     @IBOutlet weak var buttonIDK: UIButton!
     
     
-        
-        
-        
 
 
-    var question: [Question] = [
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+   
+    
+
+    
+    
+                    
+    
+    
+    
+                    
+    
+    
+        
+    
+
+    
+    
+    var questionone: [Question] = [
        Question(numQuestion: 1, question: "Is your teacher a female?"),
 
         Question(numQuestion: 2, question: "Do they teach Math?"),
@@ -46,8 +74,7 @@ class ViewController: UIViewController {
     func checkAns(answer: Bool, question: Int)
     {
         if answer == true{
-            
-        }
+                    }
         else if answer == false{
             
         }
