@@ -56,28 +56,42 @@ class ViewController: UIViewController {
         Question(numQuestion: 3, question: "Do they teach Science?"),
 
         Question(numQuestion: 4, question: "Do they teach History?"),
+        Question(numQuestion: 5, question: "Do they teach Compiter Science?"),
 //
-        Question(numQuestion: 5, question: "Are they on the third floor?")
+        Question(numQuestion: 6, question: "Are they on the third floor?")
 
     ]
 
     //1 = yes 2 = no 3 = idk
 
     var teacher: [Teacher] = [
-        Teacher(teacherN: "Mr. Walter", answer: [1: false, 2: true, 3: false, 4: false, 5: true]),
-        Teacher(teacherN: "Mr Laskaris", answer: [1: true, 2: true, 3: false, 4: false, 5: true]),
-        Teacher(teacherN: "Mr Laskaris", answer: [1: true, 2: true, 3: false, 4: false, 5: true])
+        Teacher(teacherN: "Mr. Walter", answer: [1: false, 2: true, 3: false, 4: false, 5: true, 6: true]),
+        Teacher(teacherN: "Mr Laskaris", answer: [1: true, 2: true, 3: false, 4: false, 5: false, 6: true]),
+        Teacher(teacherN: "Mr Jackson", answer: [1: false, 2: true, 3: false, 4: false, 5: false, 6: true])
     ]
     
     
     
     func checkAns(answer: Bool, question: Int)
     {
+        var to_remove = [Any].self
+        var ans: Bool
+        
         if answer == true{
                     }
         else if answer == false{
+            ans = false
+        }
+        
+        for a in teacher[]
+        {
+            if ans != teacher
+            {
+                to_remove.append(a)
+            }
             
         }
+        
         
     }
     
@@ -101,9 +115,9 @@ override func viewDidLoad() {
     
     
     @IBAction func noButton(_ sender: UIButton) {
-        
-//        buttonNO = 2
-        
+        count += 1
+        checkAns(answer: false, question: count)
+
     }
     
     
