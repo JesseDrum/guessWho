@@ -18,7 +18,16 @@ class ViewController: UIViewController {
     
     
 
-
+    var teacher = [
+        ["Name": "Mr. Walter", "Third Floor": true, "Female": false, "Math Teacher": true, "English Teacher": false, "Science Teacher": false, "History Teacher": false, "Language Teacher": false],
+        ["Name": "Ms. Laskaris", "Third Floor": true, "Female": true, "Math Teacher": true, "English Teacher": false, "Science Teacher": false, "History Teacher": false, "Language Teacher": false]
+    ]
+    
+    
+    
+    
+    var ans =
+    
     
     
     
@@ -64,7 +73,7 @@ class ViewController: UIViewController {
 
     //1 = yes 2 = no 3 = idk
 
-    var teacher: [Teacher] = [
+    var teacherOne: [Teacher] = [
         Teacher(teacherN: "Mr. Walter", answer: [1: false, 2: true, 3: false, 4: false, 5: true, 6: true]),
         Teacher(teacherN: "Mr Laskaris", answer: [1: true, 2: true, 3: false, 4: false, 5: false, 6: true]),
         Teacher(teacherN: "Mr Jackson", answer: [1: false, 2: true, 3: false, 4: false, 5: false, 6: true])
