@@ -56,12 +56,13 @@ class ViewController: UIViewController {
             ans = false
         }
         
-        for a in teacher[]
+        for a in teacher
         {
-            if ans != teacher
-            {
-                to_remove.append(a)
-            }
+//            if ans != teacher
+//            {
+//                to_remove.append(a)
+//            }
+        
             
         }
         

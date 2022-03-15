@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CdR-tY-pQS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CdR-tY-pQS">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -35,10 +33,6 @@
                                 <rect key="frame" x="169" y="467" width="77" height="81"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <buttonConfiguration key="configuration" style="plain">
-                                    <imageReference key="image" image="questionmark.square.fill" catalog="system" symbolScale="large"/>
-                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="65" scale="large"/>
-                                </buttonConfiguration>
                                 <connections>
                                     <segue destination="Rfg-m9-Chs" kind="show" id="ONR-OC-BBH"/>
                                 </connections>
@@ -65,10 +59,7 @@
                                 <rect key="frame" x="55" y="583" width="69" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="hand.thumbsup" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="29" scale="large"/>
-                                </buttonConfiguration>
+                                <state key="normal" title="Yes"/>
                                 <connections>
                                     <action selector="yesButton:" destination="Rfg-m9-Chs" eventType="touchUpInside" id="V6i-VG-ZKa"/>
                                 </connections>
@@ -78,9 +69,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="questionmark" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="29"/>
-                                </buttonConfiguration>
                                 <connections>
                                     <action selector="idkButton:" destination="Rfg-m9-Chs" eventType="touchUpInside" id="rEb-I6-O1f"/>
                                 </connections>
@@ -89,19 +77,29 @@
                                 <rect key="frame" x="311" y="583" width="69" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" image="hand.thumbsdown" catalog="system">
-                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="29"/>
-                                </buttonConfiguration>
+                                <state key="normal" title="No"/>
                                 <connections>
                                     <action selector="noButton:" destination="Rfg-m9-Chs" eventType="touchUpInside" id="Hyi-Gn-UGo"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8T-ni-ev4">
+                                <rect key="frame" x="35" y="116" width="345" height="157"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="44"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="PRf-Kk-6R6"/>
                         <color key="backgroundColor" red="1" green="0.89631289670000003" blue="0.18666079150000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="mJn-dk-xIU"/>
+                    <connections>
+                        <outlet property="buttonIDK" destination="yaq-R0-2Bn" id="ajR-fc-HgO"/>
+                        <outlet property="buttonNO" destination="hqK-nM-rmW" id="m4b-FJ-Qe0"/>
+                        <outlet property="buttonYes" destination="qme-yR-yg8" id="TBE-P9-6IM"/>
+                        <outlet property="myLabel" destination="d8T-ni-ev4" id="9Ki-o0-hfR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xQ0-OQ-8Hz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -126,10 +124,4 @@
             <point key="canvasLocation" x="69.565217391304358" y="65.625"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="hand.thumbsdown" catalog="system" width="128" height="128"/>
-        <image name="hand.thumbsup" catalog="system" width="128" height="128"/>
-        <image name="questionmark" catalog="system" width="96" height="128"/>
-        <image name="questionmark.square.fill" catalog="system" width="128" height="114"/>
-    </resources>
 </document>
