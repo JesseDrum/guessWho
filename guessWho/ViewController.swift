@@ -17,10 +17,39 @@ class ViewController: UIViewController {
     @IBOutlet weak var buttonIDK: UIButton!
     
 
-    var teacher = [
+    var teachers = [
         ["Name": "Mr. Walter", "Third Floor": true, "Female": false, "Math Teacher": true, "English Teacher": false, "Science Teacher": false, "History Teacher": false, "Language Teacher": false],
         ["Name": "Ms. Laskaris", "Third Floor": true, "Female": true, "Math Teacher": true, "English Teacher": false, "Science Teacher": false, "History Teacher": false, "Language Teacher": false]
     ]
+     
+    
+    
+    override func viewDidLoad() {
+        <#code#>
+    }
+    
+    
+    func check(answer: Bool, property: String)
+    {
+        
+        // loop through all teachers in arrray of dictionarys
+        
+        // remove any that dont have the same answer
+        
+        for i in stride(from: teachers.count, through: 0, by: -1) {
+            let teacherAnswer = teachers[i][property] as! Bool
+            
+            if teacherAnswer != answer
+            {
+                teachers.remove(at: i)
+            }
+            
+        }
+    }
+    
+    
+    
+    
     
 }
 
