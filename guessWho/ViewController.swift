@@ -53,7 +53,15 @@ class ViewController: UIViewController {
     }
     
     
+    @IBAction func yesButton(_ sender: Any) {
+   
+        
+    }
     
+    @IBAction func noButton(_ sender: Any) {
+  
+        
+    }
     
     
 }
