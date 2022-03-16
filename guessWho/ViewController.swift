@@ -67,10 +67,23 @@ class ViewController: UIViewController {
             }
             
         }
+        if teachers.count == 1
+        {
+            print("Your teacher is \(teachers[0]["Name"] as! String)")
+        }
+        
     }
     
     
+    @IBAction func yesButton(_ sender: Any) {
+   
+        
+    }
     
+    @IBAction func noButton(_ sender: Any) {
+  
+        
+    }
     
     
 }
