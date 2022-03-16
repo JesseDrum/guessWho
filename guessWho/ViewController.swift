@@ -74,14 +74,22 @@ class ViewController: UIViewController {
         
     }
     
-    
+    var count = 0
     @IBAction func yesButton(_ sender: Any) {
-   
+     count += 1
+     var checkAns = game[count]
+    
+//        check(answer: true, property: checkAns)
+        
+        
+        
         
     }
     
     @IBAction func noButton(_ sender: Any) {
-  
+    count += 1
+    
+        
         
     }
     
