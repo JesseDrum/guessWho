@@ -16,48 +16,26 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var buttonIDK: UIButton!
     
-    
+    var count = 0
 
     var teacher = [
         ["Name": "Mr. Walter", "Third Floor": true, "Female": false, "Math Teacher": true, "English Teacher": false, "Science Teacher": false, "History Teacher": false, "Language Teacher": false],
         ["Name": "Ms. Laskaris", "Third Floor": true, "Female": true, "Math Teacher": true, "English Teacher": false, "Science Teacher": false, "History Teacher": false, "Language Teacher": false]
     ]
     
-    
-    
-    
-  func
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-   
-    
+    var questions: [Question] = [
+       Question(numQuestion: 1, question: "Is your teacher a female?"),
 
-    
-    
-//
-//    var questions: [Question] = [
-//       Question(numQuestion: 1, question: "Is your teacher a female?"),
-//
-//        Question(numQuestion: 2, question: "Do they teach Math?"),
-//
-//        Question(numQuestion: 3, question: "Do they teach Science?"),
-//
-//        Question(numQuestion: 4, question: "Do they teach History?"),
-//        Question(numQuestion: 5, question: "Do they teach Compiter Science?"),
-////
-//        Question(numQuestion: 6, question: "Are they on the third floor?")
-//
-//    ]
+        Question(numQuestion: 2, question: "Do they teach Math?"),
+
+        Question(numQuestion: 3, question: "Do they teach Science?"),
+
+        Question(numQuestion: 4, question: "Do they teach History?"),
+        Question(numQuestion: 5, question: "Do they teach Compiter Science?"),
+
+        Question(numQuestion: 6, question: "Are they on the third floor?")
+
+    ]
 
     //1 = yes 2 = no 3 = idk
 
@@ -66,10 +44,6 @@ class ViewController: UIViewController {
 //        Teacher(teacherN: "Mr Laskaris", answer: [1: true, 2: true, 3: false, 4: false, 5: false, 6: true]),
 //        Teacher(teacherN: "Mr Jackson", answer: [1: false, 2: true, 3: false, 4: false, 5: false, 6: true])
 //    ]
-    
-    
-    
-   
     
     
 override func viewDidLoad() {
@@ -86,7 +60,7 @@ override func viewDidLoad() {
     
     @IBAction func yesButton(_ sender: UIButton) {
         
-        count += 1
+       count += 1
         if count >= questions.count {
             count = 0
             // display alert that we ran out questuons
@@ -101,10 +75,12 @@ override func viewDidLoad() {
     
     
     @IBAction func noButton(_ sender: UIButton) {
-        count += 1
+         count += 1
         checkAns(answer: false, question: count)
 
     }
+    
+    
     
     
     
@@ -160,26 +136,16 @@ override func viewDidLoad() {
 //              print("your character is "+database[0]["name"])
 //              quit()
         
-        
-        
-        
-        
-    }
+        }
 
 
 }
 
-//struct Question {
-//    let numQuestion: Int
-//    let question: String
-//
-//
-//
-//
-//
-////    let text: String
-////    let answers: [Answer]
-//}
+struct Question {
+    let numQuestion: Int
+    let question: String
+
+}
 //
 //struct Teacher {
 //    let teacherN: String
