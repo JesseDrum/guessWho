@@ -5,7 +5,10 @@ class ViewController: UIViewController {
     
     
     
-    var game = [Questions]()
+    var game = [Question]()
+    var currentQuestion = Question(text: "default")
+
+    
     
     @IBOutlet weak var myLabel: UILabel!
     
@@ -26,26 +29,50 @@ class ViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        questionsForGAME()
+        loadQuestion(question: game.first!)
+        
         
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     func questionsForGAME(){
-        game.append(Questions(text: "Are they a language teacher?"));
-        game.append(Questions(text: "Are they a history teacher?"));
-        game.append(Questions(text: "Is your teacher a female?"));
-        game.append(Questions(text: "Is your teacher a female?"));
-        game.append(Questions(text: "Is your teacher a female?"));
-        game.append(Questions(text: "Is your teacher a female?"));
-        game.append(Questions(text: "Is your teacher a female?"));
+        game.append(Question(text: "Are they a language teacher?"));
+        game.append(Question(text: "Are they a history teacher?"));
+        game.append(Question(text: "Is your teacher a female?"));
+        game.append(Question(text: "Is your teacher a female?"));
+        game.append(Question(text: "Is your teacher a female?"));
+        game.append(Question(text: "Is your teacher a female?"));
+        game.append(Question(text: "Is your teacher a female?"));
 
 
     
     
-        
+}
     
     
-    }
+    
+    func loadQuestion(question: Question) {
+        myLabel.text = question.text
+        currentQuestion = question
+        }
+    
+    
+    
+    
     
     
     
@@ -71,7 +98,7 @@ class ViewController: UIViewController {
         }
         if teachers.count == 1
         {
-            print("Your teacher is \(teachers[0]["Name"] as! String)")
+            myLabel.text = ("Your teacher is \(teachers[0]["Name"] as! String)")
         }
         
     }
@@ -112,6 +139,27 @@ class ViewController: UIViewController {
     
         
         
+        if count == 1 {
+            check(answer: false, property: "Language Teacher")
+        }
+        if count == 2 {
+            check(answer: false, property: "History Teacher")
+        }
+        if count == 3 {
+            check(answer: false, property: "Science Teacher")
+        }
+        if count == 4 {
+            check(answer: false, property: "English Teacher")
+        }
+        if count == 5 {
+            check(answer: false, property: "Math Teacher")
+        }
+        if count == 6 {
+            check(answer: false, property: "Female")
+        }
+        if count == 7 {
+            check(answer: false, property: "Third Floor")
+        }
         
         
     }
@@ -119,7 +167,7 @@ class ViewController: UIViewController {
     
 }
 
-struct Questions{
+struct Question{
     let text: String
 }
 
