@@ -16,6 +16,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var buttonIDK: UIButton!
     
+    var properties = ["Female", "Math Teacher","English Teacher", "Science Teacher", "History Teacher", "Language Teacher", "Third Floor"]
+
 
     var teachers = [
         ["Name": "Mr. Walter", "Third Floor": true, "Female": false, "Math Teacher": true, "English Teacher": false, "Science Teacher": false, "History Teacher": false, "Language Teacher": true],
@@ -26,7 +28,6 @@ class ViewController: UIViewController {
     
     
     override func viewDidLoad() {
-        
     }
     
     
@@ -40,10 +41,6 @@ class ViewController: UIViewController {
         game.append(Questions(text: "Is your teacher a female?"));
 
 
-    
-    
-        
-    
     
     }
     
@@ -78,42 +75,13 @@ class ViewController: UIViewController {
     
     var count = 0
     @IBAction func yesButton(_ sender: Any) {
+        check(answer: true, property: properties[count])
         count += 1
-        
-        if count == 1 {
-            check(answer: true, property: "Language Teacher")
-        }
-        if count == 2 {
-            check(answer: true, property: "History Teacher")
-        }
-        if count == 3 {
-            check(answer: true, property: "Science Teacher")
-        }
-        if count == 4 {
-            check(answer: true, property: "English Teacher")
-        }
-        if count == 5 {
-            check(answer: true, property: "Math Teacher")
-        }
-        if count == 6 {
-            check(answer: true, property: "Female")
-        }
-        if count == 7 {
-            check(answer: true, property: "Third Floor")
-        }
-        
-        
-        
-        
     }
     
     @IBAction func noButton(_ sender: Any) {
-    count += 1
-    
-        
-        
-        
-        
+        check(answer: false, property: properties[count])
+        count += 1
     }
     
     
