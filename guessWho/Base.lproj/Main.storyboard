@@ -70,7 +70,7 @@
                                 <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Yes"/>
                                 <connections>
-                                    <action selector="yesButton:" destination="Rfg-m9-Chs" eventType="touchUpInside" id="V6i-VG-ZKa"/>
+                                    <action selector="yesButton:" destination="Rfg-m9-Chs" eventType="touchUpInside" id="4my-2q-dXD"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yaq-R0-2Bn">
@@ -88,7 +88,7 @@
                                 <color key="tintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="No"/>
                                 <connections>
-                                    <action selector="noButton:" destination="Rfg-m9-Chs" eventType="touchUpInside" id="Hyi-Gn-UGo"/>
+                                    <action selector="noButton:" destination="Rfg-m9-Chs" eventType="touchUpInside" id="lc9-Rb-r69"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8T-ni-ev4">
