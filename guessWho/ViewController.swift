@@ -5,7 +5,7 @@ class ViewController: UIViewController {
     
     
     
-    
+    var game = [Questions]()
     
     @IBOutlet weak var myLabel: UILabel!
     
@@ -28,6 +28,28 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         
     }
+    
+    
+    func questionsForGAME(){
+        game.append(Questions(text: "Are they a language teacher?"));
+        game.append(Questions(text: "Are they a history teacher?"));
+        game.append(Questions(text: "Is your teacher a female?"));
+        game.append(Questions(text: "Is your teacher a female?"));
+        game.append(Questions(text: "Is your teacher a female?"));
+        game.append(Questions(text: "Is your teacher a female?"));
+        game.append(Questions(text: "Is your teacher a female?"));
+
+
+    
+    
+        
+    
+    
+    }
+    
+    
+    
+    
     
     
     func check(answer: Bool, property: String)
@@ -86,7 +108,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func noButton(_ sender: Any) {
-  
+    count += 1
+    
+        
         
         
         
@@ -94,5 +118,11 @@ class ViewController: UIViewController {
     
     
 }
+
+struct Questions{
+    let text: String
+}
+
+
 
 
