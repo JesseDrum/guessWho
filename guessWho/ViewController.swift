@@ -6,15 +6,15 @@ class ViewController: UIViewController {
     
     var count = 0
 
- 
-    @objc func noClick(_sender: Any)
-    {
-
-    }
-    @objc func yesClick(_sender: Any)
-    {
-    
-    }
+//
+//    @objc func noClick(_sender: Any)
+//    {
+//
+//    }
+//    @objc func yesClick(_sender: Any)
+//    {
+//
+//    }
     
     
     
@@ -47,7 +47,7 @@ class ViewController: UIViewController {
         questionsForGAME()
 //        loadQuestion(question: game.first!)
         loadQuestion(question: count)
-        
+
         
     }
     
@@ -83,7 +83,10 @@ class ViewController: UIViewController {
     
     
     func loadQuestion(question: Int) {
-        myLabel.text = game[count].text
+        if teachers.count > 1 {
+            myLabel.text = game[count].text
+
+        }
         
         }
     
@@ -121,15 +124,15 @@ class ViewController: UIViewController {
             myLabel.text = "It's your teacher \(teachers[0]["Name"] as! String)?"
             
             
-            let yesButton = UIButton(frame: CGRect(x: 50, y: 590, width: 100, height: 50))
-            yesButton.setTitle("YesButton", for: .normal)
-            self.view.addSubview(yesButton)
-            yesButton.addTarget(self, action: #selector(yesClick), for: .touchUpInside)
-            
-            let noButton = UIButton(frame: CGRect(x: 250, y: 590, width: 100, height: 50))
-            noButton.setTitle("NoButton", for: .normal)
-            self.view.addSubview(noButton)
-            noButton.addTarget(self, action: #selector(noClick), for: .touchUpInside)
+//            let yesButton = UIButton(frame: CGRect(x: 50, y: 590, width: 100, height: 50))
+//            yesButton.setTitle("YesButton", for: .normal)
+//            self.view.addSubview(yesButton)
+//            yesButton.addTarget(self, action: #selector(yesClick), for: .touchUpInside)
+//
+//            let noButton = UIButton(frame: CGRect(x: 250, y: 590, width: 100, height: 50))
+//            noButton.setTitle("NoButton", for: .normal)
+//            self.view.addSubview(noButton)
+//            noButton.addTarget(self, action: #selector(noClick), for: .touchUpInside)
         }
         
         
@@ -150,8 +153,14 @@ class ViewController: UIViewController {
             count = 0
         }
         loadQuestion(question: count)
+        
+        if teachers.count == 1{
+            
+        }
+        
+        
     }
-    
+
     @IBAction func noButton(_ sender: Any) {
         check(answer: false, property: properties[count])
         count += 1
@@ -160,6 +169,13 @@ class ViewController: UIViewController {
             count = 0
         }
         loadQuestion(question: count)
+        
+        if teachers.count == 1{
+         
+        }
+        
+        
+        
     }
     
     
