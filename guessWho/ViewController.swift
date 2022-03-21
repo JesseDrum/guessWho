@@ -18,8 +18,10 @@ class ViewController: UIViewController {
     
     
     
-    var game = [Questions]()
-//    var game = ["Is your teacher a female?", "Are they a math teacher?", "Are they a English teacher?", "Are they a History teacher?", "Are they a Language teacher?", "Are they in second floor?", "Are they in third floor?"]
+    var game = [Question]()
+    var currentQuestion = Question(text: "default")
+
+    
     
     @IBOutlet weak var myLabel: UILabel!
     
@@ -34,29 +36,63 @@ class ViewController: UIViewController {
 
 
     var teachers = [
-        ["Name": "Mr. Walter", "Third Floor": true, "Female": false, "Math Teacher": true, "English Teacher": false, "Science Teacher": false, "History Teacher": false, "Language Teacher": true, "Second Floor": true],
-        ["Name": "Ms. Laskaris", "Third Floor": true, "Female": true, "Math Teacher": true, "English Teacher": false, "Science Teacher": false, "History Teacher": false, "Language Teacher": false, "Second Floor": true],
-        ["Name": "Ms. Grady", "Third Floor": false, "Female": true, "Math Teacher": false, "English Teacher": true, "Science Teacher": false, "History Teacher": false, "Language Teacher": false, "Second Floor": true]
+        ["Name": "Mr. Walter", "Third Floor": true, "Female": false, "Math Teacher": true, "English Teacher": false, "Science Teacher": false, "History Teacher": false, "Language Teacher": true],
+        ["Name": "Ms. Laskaris", "Third Floor": true, "Female": true, "Math Teacher": true, "English Teacher": false, "Science Teacher": false, "History Teacher": false, "Language Teacher": false],
+        ["Name": "Sabrina", "Third Floor": true, "Female": true, "Math Teacher": false, "English Teacher": false, "Science Teacher": false, "History Teacher": true, "Language Teacher": true]
     ]
      
   
     
     override func viewDidLoad() {
+        questionsForGAME()
+//        loadQuestion(question: game.first!)
+        loadQuestion(question: count)
+        
+        
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     
     func questionsForGAME(){
-        game.append(Questions(text: "Is your teacher a female?"));
-        game.append(Questions(text: "Are they a math teacher?"));
-        game.append(Questions(text: "Are they a English teacher?"));
-        game.append(Questions(text: "Are they a Science teacher?"));
-        game.append(Questions(text: "Are they a History teacher?"));
-        game.append(Questions(text: "Are they a language teacher?"));
-        game.append(Questions(text: "Are they in second floor?"));
-        game.append(Questions(text: "Are they in third floor?"));
+        game.append(Question(text: "Is your teacher a female?"));
+        game.append(Question(text: "Are they a math teacher?"));
+        game.append(Question(text: "Is your teacher a female?"));
+        game.append(Question(text: "Is your teacher a female?"));
+        game.append(Question(text: "Is your teacher a female?"));
+        game.append(Question(text: "Is your teacher a female?"));
+        game.append(Question(text: "Is your teacher a female?"));
 
 
-    }
+    
+    
+}
+    
+    
+    
+    func loadQuestion(question: Int) {
+        myLabel.text = game[count].text
+//        currentQuestion = question
+        
+        }
+    
+    
+    
+    
+    
+    
     
     
     
@@ -110,11 +146,21 @@ class ViewController: UIViewController {
     @IBAction func yesButton(_ sender: Any) {
         check(answer: true, property: properties[count])
         count += 1
+        if count == properties.count
+        {
+            count = 0
+        }
+        loadQuestion(question: count)
     }
     
     @IBAction func noButton(_ sender: Any) {
         check(answer: false, property: properties[count])
         count += 1
+        if count == properties.count
+        {
+            count = 0
+        }
+        loadQuestion(question: count)
     }
     
     
@@ -129,12 +175,7 @@ class ViewController: UIViewController {
     
 }
 
-
-
-
-
-
-struct Questions{
+struct Question{
     let text: String
 }
 
