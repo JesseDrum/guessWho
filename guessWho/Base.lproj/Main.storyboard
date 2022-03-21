@@ -108,11 +108,28 @@
                         <outlet property="buttonNO" destination="hqK-nM-rmW" id="m4b-FJ-Qe0"/>
                         <outlet property="buttonYes" destination="qme-yR-yg8" id="TBE-P9-6IM"/>
                         <outlet property="myLabel" destination="d8T-ni-ev4" id="9Ki-o0-hfR"/>
+                        <segue destination="sLo-Bi-QUp" kind="show" identifier="inputSegue" id="tZY-Cb-c0X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xQ0-OQ-8Hz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1871.0144927536232" y="65.625"/>
+        </scene>
+        <!--Userinput View-->
+        <scene sceneID="qOn-JS-EXL">
+            <objects>
+                <viewController id="sLo-Bi-QUp" customClass="UserinputView" customModule="guessWho" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AuN-s3-4xm">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="WcL-q0-7EP"/>
+                        <color key="backgroundColor" red="1" green="0.88110215673629089" blue="0.30186411969498761" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="npx-FS-8cB"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hv7-GL-KVv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2804" y="66"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Igj-yp-JCQ">
