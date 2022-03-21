@@ -84,7 +84,6 @@ class ViewController: UIViewController {
     
     func loadQuestion(question: Int) {
         myLabel.text = game[count].text
-//        currentQuestion = question
         
         }
     
@@ -105,7 +104,7 @@ class ViewController: UIViewController {
         // loop through all teachers in arrray of dictionarys
         
         // remove any that dont have the same answer
-        myLabel.text = game[count+1]
+//        myLabel.text = game[count+1]
         
         for i in stride(from: teachers.count-1, through: 0, by: -1) {
             let teacherAnswer = teachers[i][property] as! Bool
