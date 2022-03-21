@@ -25,14 +25,15 @@ class ViewController: UIViewController {
     var teachers = [
         ["Name": "Mr. Walter", "Third Floor": true, "Female": false, "Math Teacher": true, "English Teacher": false, "Science Teacher": false, "History Teacher": false, "Language Teacher": true],
         ["Name": "Ms. Laskaris", "Third Floor": true, "Female": true, "Math Teacher": true, "English Teacher": false, "Science Teacher": false, "History Teacher": false, "Language Teacher": false],
-        ["Name": "Sabrina", "Third Floor": true, "Female": true, "Math Teacher": true, "English Teacher": false, "Science Teacher": false, "History Teacher": true, "Language Teacher": true]
+        ["Name": "Sabrina", "Third Floor": true, "Female": true, "Math Teacher": false, "English Teacher": false, "Science Teacher": false, "History Teacher": true, "Language Teacher": true]
     ]
      
     
     
     override func viewDidLoad() {
         questionsForGAME()
-        loadQuestion(question: game.first!)
+//        loadQuestion(question: game.first!)
+        loadQuestion(question: count)
         
         
     }
@@ -51,9 +52,10 @@ class ViewController: UIViewController {
     
     
     
+    
     func questionsForGAME(){
-        game.append(Question(text: "Are they a language teacher?"));
-        game.append(Question(text: "Are they a history teacher?"));
+        game.append(Question(text: "Is your teacher a female?"));
+        game.append(Question(text: "Are they a math teacher?"));
         game.append(Question(text: "Is your teacher a female?"));
         game.append(Question(text: "Is your teacher a female?"));
         game.append(Question(text: "Is your teacher a female?"));
@@ -67,10 +69,13 @@ class ViewController: UIViewController {
     
     
     
-    func loadQuestion(question: Question) {
-        myLabel.text = question.text
-        currentQuestion = question
+    func loadQuestion(question: Int) {
+        myLabel.text = game[count].text
+//        currentQuestion = question
+        
         }
+    
+    
     
     
     
@@ -109,11 +114,21 @@ class ViewController: UIViewController {
     @IBAction func yesButton(_ sender: Any) {
         check(answer: true, property: properties[count])
         count += 1
+        if count == properties.count
+        {
+            count = 0
+        }
+        loadQuestion(question: count)
     }
     
     @IBAction func noButton(_ sender: Any) {
         check(answer: false, property: properties[count])
         count += 1
+        if count == properties.count
+        {
+            count = 0
+        }
+        loadQuestion(question: count)
     }
     
     
