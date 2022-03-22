@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CdR-tY-pQS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CdR-tY-pQS">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -118,7 +117,7 @@
                         <outlet property="buttonNO" destination="hqK-nM-rmW" id="m4b-FJ-Qe0"/>
                         <outlet property="buttonYes" destination="qme-yR-yg8" id="TBE-P9-6IM"/>
                         <outlet property="myLabel" destination="d8T-ni-ev4" id="9Ki-o0-hfR"/>
-                        <segue destination="sLo-Bi-QUp" kind="show" identifier="inputSegue" id="tZY-Cb-c0X"/>
+                        <segue destination="sLo-Bi-QUp" kind="show" identifier="one" id="tZY-Cb-c0X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xQ0-OQ-8Hz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -132,14 +131,26 @@
                     <view key="view" contentMode="scaleToFill" id="AuN-s3-4xm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Is-Ni-y0F">
+                                <rect key="frame" x="186" y="271" width="31" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="WcL-q0-7EP"/>
                         <color key="backgroundColor" red="1" green="0.88110215673629089" blue="0.30186411969498761" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="npx-FS-8cB"/>
+                    <connections>
+                        <outlet property="myLable" destination="9Is-Ni-y0F" id="dav-ey-JjQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hv7-GL-KVv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2804" y="66"/>
+            <point key="canvasLocation" x="2802.898550724638" y="65.625"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Igj-yp-JCQ">
