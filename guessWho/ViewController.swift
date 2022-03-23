@@ -7,23 +7,6 @@ class ViewController: UIViewController {
     var count = 0
 
 
-  
-    
-    var teachers = [
-        ["Name": "Mr. Walter", "Third Floor": true, "Female": false, "Math Teacher": true, "English Teacher": false, "Science Teacher": false, "History Teacher": false, "Language Teacher": true],
-        ["Name": "Ms. Laskaris", "Third Floor": true, "Female": true, "Math Teacher": true, "English Teacher": false, "Science Teacher": false, "History Teacher": false, "Language Teacher": false],
-        ["Name": "Ms. Grady", "Third Floor": false, "Female": true, "Math Teacher": false, "English Teacher": true, "Science Teacher": false, "History Teacher": false, "Language Teacher": false]
-    ]
-     
-  
-    
-
-
-    
-    
-    
-    
-    
     var game = [Question]()
     var currentQuestion = Question(text: "default")
 
@@ -61,7 +44,7 @@ class ViewController: UIViewController {
         ["Name": "Mr. Cunicelli", "Female": false,"Math Teacher": false, "Science Teacher": false, "English Teacher": false, "History Teacher": false,"Art Teacher": false,"Language Teacher": true,"Third Floor": false, "Second Floor": false, "First Floor": true, "H-Vision": false, "Marines": false, "Beard": false, "Micheal": false, "Black Wavy Hair": false, "Marathons": false, "Anatomy and Physiology": false, "Classroom near Library": false, "Translationary": true, "AP Psych": false, "Blonde Straight Hair": false, "U.S History": false, "Ceramics": true, "Last Name a TV Show": false, "AP Bio": false, "Curly Hair": false, "AP Gov": false, "White Hair": false, "Librarian": false, "Health Teacher": false, "Business Teacher": false, "Security": false, "Child Development": false, "11th Grade English": false, "Ipad": false, "Karaoke": false, "Forensic Chemistry": false, "Suits": false, "Sewing Teacher": false, "Ginger": false, "No Hair": true, "Short": false ],
         
         
-        ["Name": "Mr. Cunicelli", "Female": false,"Math Teacher": false, "Science Teacher": false, "English Teacher": false, "History Teacher": false,"Art Teacher": false,"Language Teacher": true,"Third Floor": false, "Second Floor": false, "First Floor": true, "H-Vision": false, "Marines": false, "Beard": false, "Micheal": false, "Black Wavy Hair": false, "Marathons": false, "Anatomy and Physiology": false, "Classroom near Library": false, "Translationary": true, "AP Psych": false, "Blonde Straight Hair": false, "U.S History": false, "Ceramics": true, "Last Name a TV Show": false, "AP Bio": false, "Curly Hair": false, "AP Gov": false, "White Hair": false, "Librarian": false, "Health Teacher": false, "Business Teacher": false, "Security": false, "Child Development": false, "11th Grade English": false, "Ipad": false, "Karaoke": false, "Forensic Chemistry": false, "Suits": false, "Sewing Teacher": false, "Ginger": false, "No Hair": true, "Short": false ],
+        ["Name": "Mr. C", "Female": false,"Math Teacher": false, "Science Teacher": false, "English Teacher": false, "History Teacher": false,"Art Teacher": false,"Language Teacher": true,"Third Floor": false, "Second Floor": false, "First Floor": true, "H-Vision": false, "Marines": false, "Beard": false, "Micheal": false, "Black Wavy Hair": false, "Marathons": false, "Anatomy and Physiology": true, "Classroom near Library": false, "Translationary": true, "AP Psych": false, "Blonde Straight Hair": false, "U.S History": false, "Ceramics": true, "Last Name a TV Show": false, "AP Bio": false, "Curly Hair": false, "AP Gov": false, "White Hair": false, "Librarian": false, "Health Teacher": false, "Business Teacher": false, "Security": false, "Child Development": false, "11th Grade English": false, "Ipad": false, "Karaoke": false, "Forensic Chemistry": false, "Suits": false, "Sewing Teacher": false, "Ginger": false, "No Hair": true, "Short": false ],
 ]
      
     
@@ -142,8 +125,7 @@ class ViewController: UIViewController {
             print("It's your teacher \(teachers[0]["Name"] as! String)")
             myLabel.text = "Your teacher is \(teachers[0]["Name"] as! String)"
             
-            
-            
+            teachers.remove(at: 0)
         }
         
         
@@ -179,17 +161,15 @@ class ViewController: UIViewController {
       if teachers.count < 1
       {
 //            performSegue(withIdentifier: "one", sender: self)
-            NoAlerts()
+//            NoAlerts()
+        presentAlertController()
       }
 
         }
         
         func YesAlerts()
         {
-            let alert = UIAlertController(title: "Title", message: "Please Select an Option", preferredStyle: .actionSheet)
-            alert.addAction(UIAlertAction(title: "Approve", style: .default, handler: { (_) in
-                print("PLAY AGAIN")
-            }))
+           
           
         }
         
@@ -213,15 +193,41 @@ class ViewController: UIViewController {
     
     
     func presentAlertController() {
-        let alertController = UIAlertController(title: "Login", message: nil, preferredStyle: .alert)
+        let alertController = UIAlertController(title: "Help Sabrina.AI get better", message: nil, preferredStyle: .alert)
         self.present(alertController, animated: true)
+        
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Name Teacher"
+        }
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Question that true"
+//            textField.isSecureTextEntry = true
+        }
+        
+        let continueAction = UIAlertAction(title: "Continue", style: .default) { [weak alertController] _ in
+                guard let textFields = alertController?.textFields else { return }
+//        if let emailText = textFields[0].text, let passwordText = textFields[1].text {
+//          print("Email: \(emailText)")
+//           print("Password: \(passwordText)")
+//         }
+            
+            let addTeacher = textFields[0].text ?? ""
+            let addQuestion = textFields[1].text ?? ""
+            print("Teacher: \(addTeacher)")
+            print("Question: \(addQuestion)")
+            
+            let lastW = addQuestion.components(separatedBy: " ")
+            print(lastW[lastW.count-2])
+            
+        }
+        alertController.addAction(continueAction)
     }
-//
+
 //    override func viewDidAppear(_ animated: Bool) {
 //        super.viewDidAppear(animated)
 //        self.presentAlertController()
 //    }
-//
+
     
     }
     
