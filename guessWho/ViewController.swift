@@ -206,19 +206,21 @@ class ViewController: UIViewController {
         
         let continueAction = UIAlertAction(title: "Continue", style: .default) { [weak alertController] _ in
                 guard let textFields = alertController?.textFields else { return }
-//        if let emailText = textFields[0].text, let passwordText = textFields[1].text {
-//          print("Email: \(emailText)")
-//           print("Password: \(passwordText)")
-//         }
-            
+
             let addTeacher = textFields[0].text ?? ""
             let addQuestion = textFields[1].text ?? ""
             print("Teacher: \(addTeacher)")
             print("Question: \(addQuestion)")
             
-            let lastW = addQuestion.components(separatedBy: " ")
-            print(lastW[lastW.count-2])
-            
+            if addQuestion.count > 2{
+                let lastW = addQuestion.components(separatedBy: " ")
+                
+                let addProperty = lastW[lastW.count-2] + " " + lastW[lastW.count-1]
+                print(addProperty)
+               // print(lastW[lastW.count-2])
+                
+            }
+          
         }
         alertController.addAction(continueAction)
     }
@@ -227,7 +229,7 @@ class ViewController: UIViewController {
 //        super.viewDidAppear(animated)
 //        self.presentAlertController()
 //    }
-//commit
+
     
     }
     
