@@ -6,18 +6,7 @@ class ViewController: UIViewController {
     
     var count = 0
 
-//
-//    @objc func noClick(_sender: Any)
-//    {
-//
-//    }
-//    @objc func yesClick(_sender: Any)
-//    {
-//
-//    }
-    
-    
-    
+
     var game = [Question]()
     var currentQuestion = Question(text: "default")
 
@@ -1606,12 +1595,22 @@ class ViewController: UIViewController {
      
     override func viewDidLoad() {
         questionsForGAME()
-//        loadQuestion(question: game.first!)
         loadQuestion(question: count)
 }
     
     
 
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "one" {
+            let destination = segue.destination as! UserinputView
+            destination.games = teachers
+            
+        }
+      
+    }
     
     func questionsForGAME(){
         game.append(Question(text: "Is your teacher a female?"));
@@ -1681,12 +1680,8 @@ class ViewController: UIViewController {
     
     func check(answer: Bool, property: String)
     {
-        
-        // loop through all teachers in arrray of dictionarys
-        
-        // remove any that dont have the same answer
-//        myLabel.text = game[count+1]
-        
+   
+        print("Before filter \(teachers.count)")
         for i in stride(from: teachers.count-1, through: 0, by: -1) {
             let teacherAnswer = teachers[i][property] as! Bool
             
@@ -1696,64 +1691,118 @@ class ViewController: UIViewController {
             }
             
         }
+        print("After filter \(teachers.count)")
         if teachers.count == 1
         {
             print("It's your teacher \(teachers[0]["Name"] as! String)")
             myLabel.text = "Your teacher is \(teachers[0]["Name"] as! String)"
             
-            
-//            let yesButton = UIButton(frame: CGRect(x: 50, y: 590, width: 100, height: 50))
-//            yesButton.setTitle("YesButton", for: .normal)
-//            self.view.addSubview(yesButton)
-//            yesButton.addTarget(self, action: #selector(yesClick), for: .touchUpInside)
+            teachers.remove(at: 0)
+        }
+        
+        
 //
-//            let noButton = UIButton(frame: CGRect(x: 250, y: 590, width: 100, height: 50))
-//            noButton.setTitle("NoButton", for: .normal)
-//            self.view.addSubview(noButton)
-//            noButton.addTarget(self, action: #selector(noClick), for: .touchUpInside)
-        }
-        
-        
-       
-        if count > properties.count-1
-        {
-            count = 0
-
-        }
-        
+//        if count > properties.count-1
+//        {
+//            count = 0
+//
+//        }
+//
     }
     
     @IBAction func yesButton(_ sender: Any) {
         check(answer: true, property: properties[count])
         count += 1
-        if count == properties.count
-        {
-            count = 0
-        }
+
         loadQuestion(question: count)
         
-        if teachers.count == 1{
-            
+        if teachers.count < 1
+        {
+            YesAlerts()
         }
         
         
     }
 
+    
     @IBAction func noButton(_ sender: Any) {
         check(answer: false, property: properties[count])
         count += 1
-        if count == properties.count
-        {
-            count = 0
-        }
         loadQuestion(question: count)
         
-        if teachers.count == 1{
-         
+      if teachers.count < 1
+      {
+//            performSegue(withIdentifier: "one", sender: self)
+//            NoAlerts()
+        presentAlertController()
+      }
+
         }
         
+        func YesAlerts()
+        {
+           
+          
+        }
         
+        func NoAlerts()
+        {
+            let alertController = UIAlertController(title: "Add new tag", message: nil, preferredStyle: .alert)
+                 let confirmAction = UIAlertAction(title: "Add", style: .default) { (_) in
+                     if let txtField = alertController.textFields?.first, let text = txtField.text {
+                         // operations
+                         print("Text==>" + text)
+                     }
+                 }
+                 let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (_) in }
+                 alertController.addTextField { (textField) in
+                     textField.placeholder = "Tag"
+                 }
+                 alertController.addAction(confirmAction)
+                 alertController.addAction(cancelAction)
+                 self.present(alertController, animated: true, completion: nil)
+        }
+    
+    
+    func presentAlertController() {
+        let alertController = UIAlertController(title: "Help Sabrina.AI get better", message: nil, preferredStyle: .alert)
+        self.present(alertController, animated: true)
         
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Name Teacher"
+        }
+        alertController.addTextField { (textField) in
+            textField.placeholder = "Question that true"
+//            textField.isSecureTextEntry = true
+        }
+        
+        let continueAction = UIAlertAction(title: "Continue", style: .default) { [weak alertController] _ in
+                guard let textFields = alertController?.textFields else { return }
+
+            let addTeacher = textFields[0].text ?? ""
+            let addQuestion = textFields[1].text ?? ""
+            print("Teacher: \(addTeacher)")
+            print("Question: \(addQuestion)")
+            
+            if addQuestion.count > 2{
+                let lastW = addQuestion.components(separatedBy: " ")
+                
+                let addProperty = lastW[lastW.count-2] + " " + lastW[lastW.count-1]
+                print(addProperty)
+               // print(lastW[lastW.count-2])
+                
+            }
+          
+        }
+        alertController.addAction(continueAction)
+    }
+
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//        self.presentAlertController()
+//    }
+
+    
     }
     
     
@@ -1766,7 +1815,7 @@ class ViewController: UIViewController {
     
     
     
-}
+
 
 struct Question{
     let text: String
